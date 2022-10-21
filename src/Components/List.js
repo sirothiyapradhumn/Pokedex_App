@@ -28,9 +28,30 @@ function List({currText, pokeType}) {
         };
       },[])
 
-    let filteredPoke = pokeData;
+      
+			
+      function arraysEqual(a, b) {
+        if (a === b) return true;
+        if (a == null || b == null) return false;
+        if (a.length < b.length) return false;
+       
+        for (var i = 0; i < b.length; ++i) {
+          if(a.includes(b[i]) == false){
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      var filteredPokeByTypes = pokeData.filter( (obj)=>{
+        return (arraysEqual(obj.type.sort(), pokeType.sort()));
+      });
+
+      console.log(filteredPokeByTypes);
+
+    let filteredPoke = filteredPokeByTypes;
     if(currText === ""){
-      filteredPoke = pokeData
+      filteredPoke = filteredPokeByTypes;
     }
     else{
       filteredPoke = filteredPoke.filter((poke) =>{
@@ -38,6 +59,8 @@ function List({currText, pokeType}) {
             return pokeName.includes(currText); 
         });
     }  
+
+
 
   return (
     <TableContainer component={Paper}>
