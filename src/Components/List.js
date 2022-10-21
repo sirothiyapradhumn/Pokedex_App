@@ -9,36 +9,49 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios';
 
   
-function List() {
+function List({currText}) {
     const [pokeData, setPokedata] = useState([]);
+    // console.log(currText);
 
     useEffect(()=>{
-        console.log("component did mount");
+        // console.log("component did mount");
         (async () => {
             let ans = await axios.get(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
-            console.log(ans.data.pokemon);
+            // console.log(ans.data.pokemon);
             setPokedata(ans.data.pokemon);
           })();
         
+          
         return () => {
         // this now gets called when the component unmounts
         };
       },[])
+
+    let filteredPoke = pokeData;
+    if(currText === ""){
+      filteredPoke = pokeData
+    }
+    else{
+      filteredPoke = filteredPoke.filter((poke) =>{
+            let pokeName = poke.name.toLowerCase();
+            return pokeName.includes(currText); 
+        });
+    }  
 
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
             <TableCell>Num</TableCell>
+            <TableCell>Name</TableCell>
             <TableCell>Type&nbsp;</TableCell>
             <TableCell>Weaknesses&nbsp;</TableCell>
             <TableCell>Image&nbsp;</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {pokeData.map((row) => (
+          {filteredPoke.map((row) => (
             <TableRow key={row.num}>
               <TableCell>{row.num}</TableCell>
               <TableCell component="th" scope="row">{row.name}</TableCell>

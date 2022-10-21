@@ -1,5 +1,4 @@
-// import React from 'react'
-import * as React from 'react';
+import React, { useState } from 'react'
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -9,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import List from './List'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -53,7 +53,10 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 function Navbar() {
+    const [currText, setCurrText] = useState('');
+    
   return (
+    <>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -79,13 +82,17 @@ function Navbar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search Pokemon…"
               inputProps={{ 'aria-label': 'search' }}
+              value={currText} onChange={(e)=> setCurrText(e.target.value)}
             />
           </Search>
         </Toolbar>
       </AppBar>
     </Box>
+    <List currText={currText}/>
+    </>
+    
   )
 }
 
