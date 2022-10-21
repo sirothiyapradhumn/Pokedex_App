@@ -9,6 +9,13 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import List from './List'
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import ListItemText from '@mui/material/ListItemText';
+import Select from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -52,8 +59,48 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
+  const ITEM_HEIGHT = 48;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
+
+  const types = [
+    'Grass',
+    'Poison',
+    'Fire',
+    'Flying',
+    'Water',
+    'Bug',
+    'Normal',
+    'Electric',
+    'Ground',
+    'Psychic',
+    'rock',
+    'Ice',
+    'Ghost',
+    'Dragon',
+  ];
+
 function Navbar() {
     const [currText, setCurrText] = useState('');
+    const [pokeType, setpokeType] = useState([]);
+
+    const handleChange = (event) => {
+      const {
+        target: { value },
+      } = event;
+      setpokeType(
+        // On autofill we get a stringified value.
+        typeof value === 'string' ? value.split(',') : value,
+      );
+    };
+
     
   return (
     <>
@@ -67,7 +114,6 @@ function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
@@ -77,6 +123,28 @@ function Navbar() {
           >
             Pokedex
           </Typography>
+            <div>
+            <FormControl sx={{ m: 1, width: 300 }}>
+              <InputLabel id="demo-multiple-checkbox-label">Types</InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={pokeType}
+                onChange={handleChange}
+                input={<OutlinedInput label="Tag" />}
+                renderValue={(selected) => selected.join(', ')}
+                MenuProps={MenuProps}
+              >
+                {types.map((type) => (
+                  <MenuItem key={type} value={type}>
+                    <Checkbox checked={pokeType.indexOf(type) > -1} />
+                    <ListItemText primary={type} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </div>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -90,7 +158,7 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     </Box>
-    <List currText={currText}/>
+    <List currText={currText} pokeType={pokeType}/>
     </>
     
   )

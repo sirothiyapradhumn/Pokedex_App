@@ -9,9 +9,10 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios';
 
   
-function List({currText}) {
+function List({currText, pokeType}) {
     const [pokeData, setPokedata] = useState([]);
     // console.log(currText);
+    console.log(pokeType);
 
     useEffect(()=>{
         // console.log("component did mount");
@@ -56,7 +57,7 @@ function List({currText}) {
               <TableCell>{row.num}</TableCell>
               <TableCell component="th" scope="row">{row.name}</TableCell>
               <TableCell>{row.type}</TableCell>
-              <TableCell>{row.weaknesses}</TableCell>
+              <TableCell>{row.weaknesses[0]}</TableCell>
               <TableCell> <img src={row.img} style={{width:'8rem'}}/></TableCell>
             </TableRow>
           ))}
