@@ -6,7 +6,6 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import List from './List'
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -108,7 +107,7 @@ const Search = styled('div')(({ theme }) => ({
     'Dark',
   ];
 
-function Navbar() {
+function Navbar(props) {
     const [currText, setCurrText] = useState('');
     const [pokeType, setpokeType] = useState([]);
     const [pokeWeakness, setPokeWeakness] = useState([]);
@@ -213,7 +212,7 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     </Box>
-    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness}/>
+    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} alert={props.alert}/>
     </>
     
   )

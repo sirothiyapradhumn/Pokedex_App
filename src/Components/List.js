@@ -7,9 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
+import Button from '@mui/material/Button';
 
   
-function List({currText, pokeType, pokeWeakness}) {
+function List({currText, pokeType, pokeWeakness, alert}) {
     const [pokeData, setPokedata] = useState([]);
     // console.log(currText);
     //console.log(pokeType);
@@ -80,6 +81,7 @@ function List({currText, pokeType, pokeWeakness}) {
             <TableCell>Type&nbsp;</TableCell>
             <TableCell>Weaknesses&nbsp;</TableCell>
             <TableCell>Image&nbsp;</TableCell>
+            <TableCell>&nbsp;</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -89,7 +91,8 @@ function List({currText, pokeType, pokeWeakness}) {
               <TableCell component="th" scope="row">{row.name}</TableCell>
               <TableCell>{row.type}</TableCell>
               <TableCell>{row.weaknesses}</TableCell>
-              <TableCell> <img src={row.img} style={{width:'8rem'}}/></TableCell>
+              <TableCell> <img src={row.img} alt={row.name} style={{width:'8rem'}}/></TableCell>
+              <TableCell><Button variant="outlined" onClick={()=>alert(row)}>Show Details</Button></TableCell>
             </TableRow>
           ))}
         </TableBody>
