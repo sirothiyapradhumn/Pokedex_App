@@ -135,17 +135,9 @@ function Navbar(props) {
     
   return (
     <>
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, pb:5 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-          </IconButton>
           <Typography
             variant="h6"
             noWrap
@@ -199,6 +191,7 @@ function Navbar(props) {
               </Select>
             </FormControl>
           </div>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -212,7 +205,7 @@ function Navbar(props) {
         </Toolbar>
       </AppBar>
     </Box>
-    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} alert={props.alert}/>
+    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} alert={props.alert} />
     </>
     
   )
