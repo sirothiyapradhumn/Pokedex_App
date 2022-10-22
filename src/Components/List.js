@@ -9,10 +9,11 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios';
 
   
-function List({currText, pokeType}) {
+function List({currText, pokeType, pokeWeakness}) {
     const [pokeData, setPokedata] = useState([]);
     // console.log(currText);
-    console.log(pokeType);
+    //console.log(pokeType);
+    //console.log(pokeWeakness);
 
     useEffect(()=>{
         // console.log("component did mount");
@@ -47,11 +48,18 @@ function List({currText, pokeType}) {
         return (arraysEqual(obj.type.sort(), pokeType.sort()));
       });
 
-      console.log(filteredPokeByTypes);
+      var filteredPokeByWeakness = filteredPokeByTypes.filter((obj)=>{
+        return (arraysEqual(obj.weaknesses.sort(), pokeWeakness.sort()));
+      });
 
-    let filteredPoke = filteredPokeByTypes;
+      //console.log(filteredPokeByTypes);
+      //console.log(filteredPokeByWeakness);
+
+    let filteredPoke =  filteredPokeByWeakness;
+    //console.log(filteredPoke);
+
     if(currText === ""){
-      filteredPoke = filteredPokeByTypes;
+      filteredPoke = filteredPokeByWeakness;
     }
     else{
       filteredPoke = filteredPoke.filter((poke) =>{
@@ -80,7 +88,7 @@ function List({currText, pokeType}) {
               <TableCell>{row.num}</TableCell>
               <TableCell component="th" scope="row">{row.name}</TableCell>
               <TableCell>{row.type}</TableCell>
-              <TableCell>{row.weaknesses[0]}</TableCell>
+              <TableCell>{row.weaknesses}</TableCell>
               <TableCell> <img src={row.img} style={{width:'8rem'}}/></TableCell>
             </TableRow>
           ))}

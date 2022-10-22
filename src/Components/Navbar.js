@@ -59,7 +59,7 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-  const ITEM_HEIGHT = 48;
+  const ITEM_HEIGHT = 50;
   const ITEM_PADDING_TOP = 8;
   const MenuProps = {
     PaperProps: {
@@ -81,21 +81,53 @@ const Search = styled('div')(({ theme }) => ({
     'Electric',
     'Ground',
     'Psychic',
-    'rock',
+    'Rock',
     'Ice',
     'Ghost',
     'Dragon',
+    'Fighting',
+  ];
+
+  const weakness = [
+    'Grass',
+    'Poison',
+    'Fire',
+    'Flying',
+    'Water',
+    'Bug',
+    'Fairy',
+    'Electric',
+    'Ground',
+    'Psychic',
+    'Rock',
+    'Ice',
+    'Ghost',
+    'Dragon',
+    'Fighting',
+    'Steel',
+    'Dark',
   ];
 
 function Navbar() {
     const [currText, setCurrText] = useState('');
     const [pokeType, setpokeType] = useState([]);
+    const [pokeWeakness, setPokeWeakness] = useState([]);
 
     const handleChange = (event) => {
       const {
         target: { value },
       } = event;
       setpokeType(
+        // On autofill we get a stringified value.
+        typeof value === 'string' ? value.split(',') : value,
+      );
+    };
+
+    const handleChange1 = (event) => {
+      const {
+        target: { value },
+      } = event;
+      setPokeWeakness(
         // On autofill we get a stringified value.
         typeof value === 'string' ? value.split(',') : value,
       );
@@ -145,6 +177,29 @@ function Navbar() {
               </Select>
             </FormControl>
           </div>
+
+          <div>
+            <FormControl sx={{ m: 1, width: 300 }}>
+              <InputLabel id="demo-multiple-checkbox-label">Weaknesses</InputLabel>
+              <Select
+                labelId="demo-multiple-checkbox-label"
+                id="demo-multiple-checkbox"
+                multiple
+                value={pokeWeakness}
+                onChange={handleChange1}
+                input={<OutlinedInput label="Tag" />}
+                renderValue={(selected) => selected.join(', ')}
+                MenuProps={MenuProps}
+              >
+                {weakness.map((weak) => (
+                  <MenuItem key={weak} value={weak}>
+                    <Checkbox checked={pokeWeakness.indexOf(weak) > -1} />
+                    <ListItemText primary={weak} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </div>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -158,7 +213,7 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     </Box>
-    <List currText={currText} pokeType={pokeType}/>
+    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness}/>
     </>
     
   )
