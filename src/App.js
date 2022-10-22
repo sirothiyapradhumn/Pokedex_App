@@ -3,6 +3,7 @@ import './App.css';
 // import List from './Components/List';
 import Navbar from './Components/Navbar';
 import Showdetails from './Components/Showdetails';
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   const [pokeData, setPokedata] = useState({});
@@ -10,12 +11,20 @@ function App() {
     //console.log(row);
     setPokedata(row);
   }
-  console.log(pokeData);
+  //console.log(pokeData);
   return (
-    <>
-      <Navbar alert ={parentAlert}/>
-      <Showdetails pokeData = {pokeData}/>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={
+            <>
+              <Navbar alert ={parentAlert}/>
+            </>
+          }/>
+
+      <Route path='/showdetails' element={<Showdetails pokeData = {pokeData}/>} />
+    </Routes>
+    </BrowserRouter>
+    
   );
 }
 

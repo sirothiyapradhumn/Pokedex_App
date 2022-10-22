@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import Button from '@mui/material/Button';
-
+import {Link} from 'react-router-dom'
   
 function List({currText, pokeType, pokeWeakness, alert}) {
     const [pokeData, setPokedata] = useState([]);
@@ -92,7 +92,10 @@ function List({currText, pokeType, pokeWeakness, alert}) {
               <TableCell>{row.type}</TableCell>
               <TableCell>{row.weaknesses}</TableCell>
               <TableCell> <img src={row.img} alt={row.name} style={{width:'8rem'}}/></TableCell>
-              <TableCell><Button variant="outlined" onClick={()=>alert(row)}>Show Details</Button></TableCell>
+              <TableCell><Button variant="outlined" onClick={()=>alert(row)}>
+              <Link to="/showdetails" style={{textDecoration:"none"}}>Show Details</Link> 
+              </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
