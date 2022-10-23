@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom'
 
 
 function Showdetails({pokeData}) {
+  console.log(pokeData);
 
   return (
     <Box sx={{ flexGrow: 1, padding:10 }}>
@@ -29,7 +30,9 @@ function Showdetails({pokeData}) {
                 <Typography variant="body2" color="text.secondary">Weaknesses: {pokeData.weaknesses}</Typography>
                 <Typography variant="body2" color="text.secondary">Height: {pokeData.height}</Typography>
                 <Typography variant="body2" color="text.secondary">Weight: {pokeData.weight}</Typography>
-                <Typography variant="body2" color="text.secondary"></Typography>
+                <Typography variant="body2" color="text.secondary">
+                Evolution Pokemon: {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name : pokeData.prev_evolution[0].name}
+                </Typography>
             </CardContent>
             </Card>
         </Grid>
