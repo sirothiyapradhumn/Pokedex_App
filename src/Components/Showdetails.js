@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 
 
 function Showdetails({pokeData}) {
-  console.log(pokeData);
+  //console.log(pokeData);
 
   return (
     <Box sx={{ flexGrow: 1, padding:10 }}>
