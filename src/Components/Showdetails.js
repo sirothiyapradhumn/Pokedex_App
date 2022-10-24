@@ -21,17 +21,16 @@ function Showdetails({pokeData}) {
                 component="img"
                 image={pokeData.img}
                 alt="green iguana"
-                src=''
             />
             <CardContent sx={{height:150}}>
                 <Typography gutterBottom variant="h5" component="div">{pokeData.name}</Typography>
                 <Typography variant="body2" color="text.secondary">ID: {pokeData.num}</Typography>
-                <Typography variant="body2" color="text.secondary">Types: {pokeData.type}</Typography>
-                <Typography variant="body2" color="text.secondary">Weaknesses: {pokeData.weaknesses}</Typography>
-                <Typography variant="body2" color="text.secondary">Height: {pokeData.height}</Typography>
-                <Typography variant="body2" color="text.secondary">Weight: {pokeData.weight}</Typography>
-                <Typography variant="body2" color="text.secondary">
-                Evolution Pokemon: {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name : pokeData.prev_evolution[0].name}
+                <Typography variant="body2" color="green">Types: {pokeData.type.map((typ)=>typ+"  ")}</Typography>
+                <Typography variant="body2" color="red">Weaknesses: {pokeData.weaknesses.map((weak)=>weak+"  ")}</Typography>
+                <Typography variant="body2" color="blue">Height: {pokeData.height}</Typography>
+                <Typography variant="body2" color="blue">Weight: {pokeData.weight}</Typography>
+                <Typography variant="body2" color="Purple">
+                Next/Prev Evolution: {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name  : pokeData.prev_evolution[0].name}
                 </Typography>
             </CardContent>
             </Card>

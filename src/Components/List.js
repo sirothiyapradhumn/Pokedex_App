@@ -89,8 +89,8 @@ function List({currText, pokeType, pokeWeakness, alert}) {
             <TableRow key={row.num}>
               <TableCell>{row.num}</TableCell>
               <TableCell component="th" scope="row">{row.name}</TableCell>
-              <TableCell>{row.type}</TableCell>
-              <TableCell>{row.weaknesses}</TableCell>
+              <TableCell>{row.type.map((typ)=>typ+"  ")}</TableCell>
+              <TableCell>{row.weaknesses.map((weak)=>weak+"  ")}</TableCell>
               <TableCell> <img src={row.img} alt={row.name} style={{width:'8rem'}}/></TableCell>
               <TableCell><Button variant="outlined" onClick={()=>alert(row)}>
               <Link to="/showdetails" style={{textDecoration:"none"}}>Show Details</Link> 
