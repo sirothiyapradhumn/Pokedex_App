@@ -18,8 +18,8 @@ function App() {
     <Routes>
       <Route path='/' element={
             <>
-              <Navbaar/>
-              <Navbar alert ={parentAlert}/>
+              <Navbaar alert ={parentAlert}/>
+              {/* <Navbar alert ={parentAlert}/> */}
               
             </>
           }/>

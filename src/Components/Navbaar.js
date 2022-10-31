@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import List from './List';
 
 const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric','Ground','Psychic','Rock','Ice','Ghost','Dragon','Fighting'];
 
@@ -23,7 +23,7 @@ const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric
     'Dark',
   ];
 
-function Navbaar() {
+function Navbaar(props) {
     const [checkedStateTyp, setCheckedStateTyp] = useState(new Array(types.length).fill(false));
     //console.log(checkedStateTyp);
     const [checkedStateWeak, setCheckedStateWeak] = useState(new Array(weakness.length).fill(false));
@@ -69,6 +69,7 @@ function Navbaar() {
     }
 
   return (
+    <>
     <div className='navbar-self'>
         <div className='title'>
             <h1>Pokedex</h1>
@@ -118,15 +119,12 @@ function Navbaar() {
             })} 
             </ul>           
         </div>
-
-        <div className='btn-go'>
-            <button>GO</button>
-        </div>
-
         <div className='search-bar'>
             <input type="text" placeholder="Search.." value={currText} onChange={(e)=> setCurrText(e.target.value)} />
         </div>
     </div>
+    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} alert={props.alert} />
+    </>
   )
 }
 
