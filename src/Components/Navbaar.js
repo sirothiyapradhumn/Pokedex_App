@@ -24,6 +24,48 @@ const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric
   ];
 
 function Navbaar() {
+    const [checkedStateTyp, setCheckedStateTyp] = useState(new Array(types.length).fill(false));
+    //console.log(checkedStateTyp);
+    const [checkedStateWeak, setCheckedStateWeak] = useState(new Array(weakness.length).fill(false));
+    const [pokeType, setpokeType] = useState([]);
+    //console.log(pokeType);
+    const [pokeWeakness, setPokeWeakness] = useState([]);
+    console.log(pokeWeakness);
+    
+    const handleOnChange = (position) => {
+        const updatedCheckedState = checkedStateTyp.map((item, index) =>
+          index === position ? !item : item
+        );
+
+        setCheckedStateTyp(updatedCheckedState);
+
+        let tempData = updatedCheckedState.reduce((arr, currState, idx) =>{
+            if(currState === true){
+                arr.push(types[idx])
+            }
+            return arr;
+        },[]);
+        
+        setpokeType(tempData);
+    }
+
+    const handleOnChange1 = (position) => {
+        const updatedCheckedState = checkedStateWeak.map((item, index) =>
+          index === position ? !item : item
+        );
+
+        setCheckedStateWeak(updatedCheckedState);
+
+        let tempData = updatedCheckedState.reduce((arr, currState, idx) =>{
+            if(currState === true){
+                arr.push(types[idx])
+            }
+            return arr;
+        },[]);
+        
+        setPokeWeakness(tempData);
+    }
+
   return (
     <div className='navbar-self'>
         <div className='title'>
@@ -38,7 +80,13 @@ function Navbaar() {
                     <li key={index}>
                     <div className="toppings-list-item">
                         <div className="left-section">
-                        <input type="checkbox" name={type} value={type} />
+                        <input 
+                            type="checkbox" name={type} 
+                            value={type} 
+                            checked = {checkedStateTyp[index]}
+                            onChange={()=>handleOnChange(index)} 
+                            />
+
                         <label>{type}</label>
                         </div>
                     </div>
@@ -56,7 +104,10 @@ function Navbaar() {
                     <li key={index}>
                     <div className="toppings-list-item">
                         <div className="left-section">
-                        <input type="checkbox" name={week} value={week} />
+                        <input type="checkbox" name={week} value={week} 
+                        checked = {checkedStateWeak[index]}
+                        onChange={()=>handleOnChange1(index)} 
+                        />
                         <label>{week}</label>
                         </div>
                     </div>
