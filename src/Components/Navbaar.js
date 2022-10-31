@@ -30,8 +30,10 @@ function Navbaar() {
     const [pokeType, setpokeType] = useState([]);
     //console.log(pokeType);
     const [pokeWeakness, setPokeWeakness] = useState([]);
-    console.log(pokeWeakness);
-    
+    //console.log(pokeWeakness);
+    const [currText, setCurrText] = useState('');
+    //console.log(currText);
+
     const handleOnChange = (position) => {
         const updatedCheckedState = checkedStateTyp.map((item, index) =>
           index === position ? !item : item
@@ -122,7 +124,7 @@ function Navbaar() {
         </div>
 
         <div className='search-bar'>
-            <input type="text" placeholder="Search.."></input>
+            <input type="text" placeholder="Search.." value={currText} onChange={(e)=> setCurrText(e.target.value)} />
         </div>
     </div>
   )
