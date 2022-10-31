@@ -16,15 +16,27 @@ function List({currText, pokeType, pokeWeakness, alert}) {
     //console.log(pokeType);
     //console.log(pokeWeakness);
 
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
+        const json = await response.json();
+        //console.log(json.pokemon);
+        setPokedata(json.pokemon);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
     useEffect(()=>{
         // console.log("component did mount");
-        (async () => {
-            let ans = await axios.get(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
-            // console.log(ans.data.pokemon);
-            setPokedata(ans.data.pokemon);
-          })();
+        // (async () => {
+        //     let ans = await axios.get(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
+        //     console.log(ans.data.pokemon);
+        //     setPokedata(ans.data.pokemon);
+        //   })();
         
-          
+        fetchData();
+
         return () => {
         // this now gets called when the component unmounts
         };
