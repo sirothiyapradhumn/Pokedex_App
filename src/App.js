@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 // import List from './Components/List';
 import Navbar from './Components/Navbar';
 import Showdetails from './Components/Showdetails';
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbaar from './Components/Navbaar';
 
 function App() {
   const [pokeData, setPokedata] = useState({});
@@ -17,7 +18,9 @@ function App() {
     <Routes>
       <Route path='/' element={
             <>
+              <Navbaar/>
               <Navbar alert ={parentAlert}/>
+              
             </>
           }/>
 
