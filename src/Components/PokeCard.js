@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 
 function PokeCard({row, data}) {
   return (
-    <div class="card" >
+    <div className="card" >
         <img src={row.img} alt={row.name}/>
-        <div class="container">
+        <div className="container">
             <h4><b>#{row.num}</b></h4> 
             <p className='poke-name'><b>{row.name}</b></p> 
             <p className='poke-type'>{row.type.map(type=> type+" ")}</p> 
