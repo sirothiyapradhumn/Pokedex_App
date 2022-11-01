@@ -14,8 +14,9 @@ function DetailsShow({pokeData}) {
                 <p className='poke-weak'>Weaknesses: {pokeData.weaknesses.map((weak)=>weak+"  ")}</p>
                 <p className='poke-hw'>Height: {pokeData.height}</p>
                 <p className='poke-hw'>Weight: {pokeData.weight}</p>
-                <p className='poke-np'>Next/Prev Evolution: 
-                {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name  : pokeData.prev_evolution[0].name}</p>
+                <p className='poke-np'>
+                  Next/Prev Evolution: {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name  : pokeData.prev_evolution[0].name}
+                  </p>
             </div>
         </div>
 
