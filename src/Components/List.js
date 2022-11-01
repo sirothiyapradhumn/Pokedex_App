@@ -8,8 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom'
-  
-function List({currText, pokeType, pokeWeakness, alert}) {
+import PokeCard from './PokeCard';
+
+function List({currText, pokeType, pokeWeakness, data}) {
     const [pokeData, setPokedata] = useState([]);
     // console.log(currText);
     //console.log(pokeType);
@@ -80,38 +81,10 @@ function List({currText, pokeType, pokeWeakness, alert}) {
         });
     }  
 
-
-
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Num</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Type&nbsp;</TableCell>
-            <TableCell>Weaknesses&nbsp;</TableCell>
-            <TableCell>Image&nbsp;</TableCell>
-            <TableCell>&nbsp;</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {filteredPoke.map((row) => (
-            <TableRow key={row.num}>
-              <TableCell>{row.num}</TableCell>
-              <TableCell component="th" scope="row">{row.name}</TableCell>
-              <TableCell>{row.type.map((typ)=>typ+"  ")}</TableCell>
-              <TableCell>{row.weaknesses.map((weak)=>weak+"  ")}</TableCell>
-              <TableCell> <img src={row.img} alt={row.name} style={{width:'8rem'}}/></TableCell>
-              <TableCell><Button variant="outlined" onClick={()=>alert(row)}>
-              <Link to="/showdetails" style={{textDecoration:"none"}}>Show Details</Link> 
-              </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      {filteredPoke.map((row) => (<PokeCard row={row} data={data}/>))}
+    </>
   )
 }
 

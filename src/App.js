@@ -5,10 +5,11 @@ import Navbar from './Components/Navbar';
 import Showdetails from './Components/Showdetails';
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbaar from './Components/Navbaar';
+import PokeCard from './Components/PokeCard';
 
 function App() {
   const [pokeData, setPokedata] = useState({});
-  function parentAlert(row){
+  function gettingData(row){
     //console.log(row);
     setPokedata(row);
   }
@@ -18,9 +19,8 @@ function App() {
     <Routes>
       <Route path='/' element={
             <>
-              <Navbaar alert ={parentAlert}/>
-              {/* <Navbar alert ={parentAlert}/> */}
-              
+              <Navbaar data ={gettingData}/>
+              {/* <Navbar data ={gettingData}/> */}
             </>
           }/>
 
