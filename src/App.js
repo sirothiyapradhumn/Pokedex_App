@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Showdetails from './Components/Showdetails';
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbaar from './Components/Navbaar';
+import DetailsShow from './Components/DetailsShow';
 
 function App() {
   const [pokeData, setPokedata] = useState({});
@@ -17,11 +17,10 @@ function App() {
       <Route path='/' element={
             <>
               <Navbaar data ={gettingData}/>
-              {/* <Navbar data ={gettingData}/> */}
             </>
           }/>
 
-      <Route path='/showdetails' element={<Showdetails pokeData = {pokeData}/>} />
+      <Route path='/showdetails' element={<DetailsShow pokeData = {pokeData}/>} />
     </Routes>
     </BrowserRouter>
     
