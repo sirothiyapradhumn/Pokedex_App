@@ -1,0 +1,36 @@
+.navbar-self {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 17vh;
+    background-color: #61dafb;
+    border-radius: 10px;
+    .title{
+      margin: 0.9rem;
+    }
+  }
+  
+  .poke-types{
+    width: 22rem;
+    h3{
+      margin: 0;
+    }
+  }
+  
+  .poke-weekness{
+    width: 22rem;
+    h3{
+      margin: 0;
+    }
+  }
+  
+  .list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0%;
+  }
+  

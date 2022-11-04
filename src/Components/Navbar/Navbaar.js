@@ -81,8 +81,8 @@ function Navbaar(props) {
             {types.map((type, index) => {
                 return (
                     <li key={index}>
-                    <div className="toppings-list-item">
-                        <div className="left-section">
+                    <div>
+                        <div>
                         <input 
                             type="checkbox" name={type} 
                             value={type} 
@@ -105,8 +105,8 @@ function Navbaar(props) {
             {weakness.map((week, index) => {
                 return (
                     <li key={index}>
-                    <div className="toppings-list-item">
-                        <div className="left-section">
+                    <div>
+                        <div>
                         <input type="checkbox" name={week} value={week} 
                         checked = {checkedStateWeak[index]}
                         onChange={()=>handleOnChange1(index)} 
