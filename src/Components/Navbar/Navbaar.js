@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import List from './List';
+import List from '../List/List';
 
 const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric','Ground','Psychic','Rock','Ice','Ghost','Dragon','Fighting'];
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import PokeCard from './PokeCard';
+import PokeCard from '../PokeCard/PokeCard';
 
 function List({currText, pokeType, pokeWeakness, data}) {
     const [pokeData, setPokedata] = useState([]);

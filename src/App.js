@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.scss';
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbaar from './Components/Navbaar';
-import DetailsShow from './Components/DetailsShow';
+import Navbaar from './Components/Navbar/Navbaar';
+import DetailsShow from './Components/DetailsShow/DetailsShow';
 
 function App() {
   const [pokeData, setPokedata] = useState({});
