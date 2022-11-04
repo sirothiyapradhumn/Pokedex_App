@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import List from '../List/List';
+import style from './navbaar.module.scss'
 
 const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric','Ground','Psychic','Rock','Ice','Ghost','Dragon','Fighting'];
 
@@ -70,14 +71,14 @@ function Navbaar(props) {
 
   return (
     <>
-    <div className='navbarSelf'>
-        <div className='title'>
+    <div className={style.navbarSelf}>
+        <div className={style.title}>
             <h1>Pokedex</h1>
         </div>
 
-        <div className='pokeTypes'>
+        <div className={style.pokeTypes}>
             <h3>Types</h3>
-            <ul className="list">
+            <ul className={style.list}>
             {types.map((type, index) => {
                 return (
                     <li key={index}>
@@ -99,9 +100,9 @@ function Navbaar(props) {
             </ul>
         </div>
 
-        <div className='pokeWeekness'>
+        <div className={style.pokeWeekness}>
             <h3>Weaknesses</h3>
-            <ul className="list">
+            <ul className={style.list}>
             {weakness.map((week, index) => {
                 return (
                     <li key={index}>
@@ -119,7 +120,7 @@ function Navbaar(props) {
             })} 
             </ul>           
         </div>
-        <div className='searchBar'>
+        <div className={style.searchBar}>
             <input type="text" placeholder="Search.." value={currText} onChange={(e)=> setCurrText(e.target.value)} />
         </div>
     </div>

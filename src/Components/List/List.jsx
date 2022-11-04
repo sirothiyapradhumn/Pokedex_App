@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PokeCard from '../PokeCard/PokeCard';
+import style from './list.module.scss'
 
 function List({currText, pokeType, pokeWeakness, data}) {
     const [pokeData, setPokedata] = useState([]);
@@ -66,7 +67,7 @@ function List({currText, pokeType, pokeWeakness, data}) {
     }  
 
   return (
-    <div className='allCards'>
+    <div className={style.allCards}>
       {filteredPoke.map((row) => (<PokeCard row={row} data={data}/>))}
     </div>
   )
