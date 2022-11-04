@@ -5,16 +5,16 @@ function DetailsShow({pokeData}) {
     //console.log(pokeData);
   return (
     <div className='detailShow'>
-        <div className="details-card" >
+        <div className="detailsCard" >
             <img src={pokeData.img} alt={pokeData.name}/>
-            <div className="details-container">
+            <div className="detailsContainer">
                 <h4><b>ID: {pokeData.num}</b></h4>
-                <p className='poke-name'><b>{pokeData.name}</b></p> 
-                <p className='poke-type'>Types: {pokeData.type.map((typ)=>typ+"  ")}</p>
-                <p className='poke-weak'>Weaknesses: {pokeData.weaknesses.map((weak)=>weak+"  ")}</p>
-                <p className='poke-hw'>Height: {pokeData.height}</p>
-                <p className='poke-hw'>Weight: {pokeData.weight}</p>
-                <p className='poke-np'>
+                <p className='pokeName'><b>{pokeData.name}</b></p> 
+                <p className='pokeType'>Types: {pokeData.type.map((typ)=>typ+"  ")}</p>
+                <p className='pokeWeak'>Weaknesses: {pokeData.weaknesses.map((weak)=>weak+"  ")}</p>
+                <p className='pokeHw'>Height: {pokeData.height}</p>
+                <p className='pokeHw'>Weight: {pokeData.weight}</p>
+                <p className='pokeNp'>
                   Next/Prev Evolution: {pokeData.hasOwnProperty('next_evolution') ? pokeData.next_evolution[0].name  : pokeData.prev_evolution[0].name}
                   </p>
             </div>

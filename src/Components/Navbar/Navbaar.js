@@ -70,12 +70,12 @@ function Navbaar(props) {
 
   return (
     <>
-    <div className='navbar-self'>
+    <div className='navbarSelf'>
         <div className='title'>
             <h1>Pokedex</h1>
         </div>
 
-        <div className='poke-types'>
+        <div className='pokeTypes'>
             <h3>Types</h3>
             <ul className="list">
             {types.map((type, index) => {
@@ -99,7 +99,7 @@ function Navbaar(props) {
             </ul>
         </div>
 
-        <div className='poke-weekness'>
+        <div className='pokeWeekness'>
             <h3>Weaknesses</h3>
             <ul className="list">
             {weakness.map((week, index) => {
@@ -119,7 +119,7 @@ function Navbaar(props) {
             })} 
             </ul>           
         </div>
-        <div className='search-bar'>
+        <div className='searchBar'>
             <input type="text" placeholder="Search.." value={currText} onChange={(e)=> setCurrText(e.target.value)} />
         </div>
     </div>

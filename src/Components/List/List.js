@@ -19,13 +19,6 @@ function List({currText, pokeType, pokeWeakness, data}) {
     };
 
     useEffect(()=>{
-        // console.log("component did mount");
-        // (async () => {
-        //     let ans = await axios.get(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
-        //     console.log(ans.data.pokemon);
-        //     setPokedata(ans.data.pokemon);
-        //   })();
-        
         fetchData();
 
         return () => {
@@ -73,7 +66,7 @@ function List({currText, pokeType, pokeWeakness, data}) {
     }  
 
   return (
-    <div className='all-cards'>
+    <div className='allCards'>
       {filteredPoke.map((row) => (<PokeCard row={row} data={data}/>))}
     </div>
   )
