@@ -1,6 +1,5 @@
 import { mount, shallow } from 'enzyme';
 import Navbaar from './Navbaar'
-import List from '../List/List'
 
 describe('Navbar Components', ()=>{
 
@@ -41,6 +40,15 @@ it('input last click snapshot', ()=>{
   let wrapper = shallow(<Navbaar/>);
   let input= wrapper.find({ value : "Steel" });
   input.simulate('change', true);
+  expect(input).toMatchSnapshot();
+})
+
+it('input search snapshot', ()=>{
+  let wrapper = shallow(<Navbaar/>);
+  const event = {target: {value: "blub"}};
+  let input= wrapper.find('input').last();
+  input.simulate('change', event)
+//  console.log(input.debug());
   expect(input).toMatchSnapshot();
 })
 

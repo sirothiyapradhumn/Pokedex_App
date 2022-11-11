@@ -648,3 +648,12 @@ exports[`Navbar Components input last click snapshot 1`] = `
   value="Steel"
 />
 `;
+
+exports[`Navbar Components input search snapshot 1`] = `
+<input
+  onChange={[Function]}
+  placeholder="Search.."
+  type="text"
+  value=""
+/>
+`;
