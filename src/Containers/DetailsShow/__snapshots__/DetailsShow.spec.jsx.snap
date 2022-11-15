@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsShow component snapshot for  1`] = `
+<div
+  className="detailShow"
+>
+  <div
+    className="detailsCard"
+  >
+    <img
+      alt="Bulbasaur"
+      src="http://www.serebii.net/pokemongo/pokemon/001.png"
+    />
+    <div
+      className="detailsContainer"
+    >
+      <h4>
+        <b>
+          ID: 
+          001
+        </b>
+      </h4>
+      <p
+        className="pokeName"
+      >
+        <b>
+          Bulbasaur
+        </b>
+      </p>
+      <p
+        className="pokeType"
+      >
+        Types: 
+        Grass  
+        Poison  
+      </p>
+      <p
+        className="pokeWeak"
+      >
+        Weaknesses: 
+        Fire  
+        Ice  
+        Flying  
+        Psychic  
+      </p>
+      <p
+        className="pokeHw"
+      >
+        Height: 
+        0.71 m
+      </p>
+      <p
+        className="pokeHw"
+      >
+        Weight: 
+        6.9 kg
+      </p>
+      <p
+        className="pokeNp"
+      >
+        Next/Prev Evolution: 
+        Ivysaur
+      </p>
+    </div>
+  </div>
+  <button>
+    <Link
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/"
+    >
+      Back
+    </Link>
+  </button>
+</div>
+`;
