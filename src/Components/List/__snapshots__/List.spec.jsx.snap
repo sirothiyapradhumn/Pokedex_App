@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component testing List coverage 1`] = `
+<List
+  currText="b"
+  pokeType={
+    Array [
+      "Grass",
+      "Poison",
+    ]
+  }
+  pokeWeakness={
+    Array [
+      "Fire",
+    ]
+  }
+>
+  <div
+    className="allCards"
+  />
+</List>
+`;
