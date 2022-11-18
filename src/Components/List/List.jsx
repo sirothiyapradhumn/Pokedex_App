@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PokeCard from '../PokeCard/PokeCard';
 import style from './list.module.scss'
 
-function List({currText, pokeType, pokeWeakness, data}) {
+function List({currText, pokeType, pokeWeakness, data, apiCall}) {
     const [pokeData, setPokedata] = useState([]);
     // console.log(currText);
     //console.log(pokeType);
@@ -13,6 +13,7 @@ function List({currText, pokeType, pokeWeakness, data}) {
         const response = await fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
         const json = await response.json();
         //console.log(json.pokemon);
+        apiCall(json.pokemon);
         setPokedata(json.pokemon);
       } catch (error) {
         console.log("error", error);
@@ -21,7 +22,6 @@ function List({currText, pokeType, pokeWeakness, data}) {
 
     useEffect(()=>{
         fetchData();
-
         return () => {
         // this now gets called when the component unmounts
         };

@@ -124,7 +124,7 @@ function Navbaar(props) {
             <input type="text" placeholder="Search.." value={currText} onChange={(e)=> setCurrText(e.target.value)} />
         </div>
     </div>
-    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} data={props.data} />
+    <List currText={currText} pokeType={pokeType} pokeWeakness={pokeWeakness} data={props.data} apiCall={props.apiCall} />
     </>
   )
 }
