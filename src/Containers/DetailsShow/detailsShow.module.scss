@@ -12,6 +12,10 @@
       border-radius: 41px 41px 41px 41px;
       width: 100%;
     }
+    .btnContainer{
+      margin: 0.8rem;
+      margin-left: 5rem;
+    }
     .detailsContainer {
       padding: 2px 16px;
       .pokeName {
@@ -33,9 +37,9 @@
         margin: 0%;
       }
       .pokeNp {
-        color: #09e2d0fa;
+        color: rgb(216, 113, 10);
         margin: 0%;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
       }
     }
   }
