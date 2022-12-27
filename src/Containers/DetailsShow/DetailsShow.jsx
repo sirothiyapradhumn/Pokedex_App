@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import style from './detailsShow.module.scss'
+import Navbaar from '../../Components/Navbar/Navbaar'
 
 function DetailsShow({pokeData, apiData}) {
     // console.log(pokeData);
@@ -13,9 +14,10 @@ function DetailsShow({pokeData, apiData}) {
     // console.log(row);
 
     useEffect(()=>{
-      pokeData.hasOwnProperty('next_evolution') ? setNextEvo(pokeData.next_evolution) : setNextEvo([]);
-      pokeData.hasOwnProperty('prev_evolution') ? setPrevEvo(pokeData.prev_evolution) : setPrevEvo([]);
-    },[])
+      // console.log("useeffect runn");
+      row.hasOwnProperty('next_evolution') ? setNextEvo(row.next_evolution) : setNextEvo([]);
+      row.hasOwnProperty('prev_evolution') ? setPrevEvo(row.prev_evolution) : setPrevEvo([]);
+    },[row])
 
     // console.log(nextEvo);
     // console.log(prevEvo);
@@ -54,7 +56,7 @@ function DetailsShow({pokeData, apiData}) {
                   </button>
                 })}
               {nextEvo.map(obj=>{
-                return <button className={style.btn} variant="outlined" onClick={()=>handleClick(obj.num)}>
+                return <button  className={style.btn} variant="outlined" onClick={()=>handleClick(obj.num)}>
                 {obj.name}
                 </button>
               })}
