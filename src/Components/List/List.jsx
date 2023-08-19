@@ -1,18 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import PokeCard from '../PokeCard/PokeCard';
 import style from './list.module.scss'
 
 function List({currText, pokeType, pokeWeakness, data, apiCall}) {
     const [pokeData, setPokedata] = useState([]);
-    // console.log(currText);
-    //console.log(pokeType);
-    //console.log(pokeWeakness);
 
     const fetchData = async () => {
       try {
         const response = await fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
         const json = await response.json();
-        //console.log(json.pokemon);
         apiCall(json.pokemon);
         setPokedata(json.pokemon);
       } catch (error) {
@@ -33,9 +30,8 @@ function List({currText, pokeType, pokeWeakness, data, apiCall}) {
         if (a === b) return true;
         if (a == null || b == null) return false;
         if (a.length < b.length) return false;
-       
         for (var i = 0; i < b.length; ++i) {
-          if(a.includes(b[i]) == false){
+          if(a.includes(b[i]) === false){
             return false;
           }
         }
@@ -50,11 +46,8 @@ function List({currText, pokeType, pokeWeakness, data, apiCall}) {
         return (arraysEqual(obj.weaknesses.sort(), pokeWeakness.sort()));
       });
 
-      //console.log(filteredPokeByTypes);
-      //console.log(filteredPokeByWeakness);
 
     let filteredPoke =  filteredPokeByWeakness;
-    //console.log(filteredPoke);
 
     if(currText === ""){
       filteredPoke = filteredPokeByWeakness;

@@ -36,7 +36,6 @@ describe("Pokecard component", () => {
 
   it(" snapshot for mock row", () => {
     let wrapper = shallow(<PokeCard row={mockrow} />);
-    //console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });
 

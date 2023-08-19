@@ -20,7 +20,6 @@ describe('List component', ()=>{
 
     it('testing List coverage', async()=>{
         let wrapper = mount(<List currText={mockCt} pokeType={mockPt} pokeWeakness={mockPw} />);
-        // console.log(wrapper.debug());
         expect(wrapper).toMatchSnapshot();
     })
     

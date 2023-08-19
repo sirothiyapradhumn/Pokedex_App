@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import style from './App.scss';
-import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbaar from './Components/Navbar/Navbaar';
 import DetailsShow from './Containers/DetailsShow/DetailsShow';
-import { useEffect } from 'react';
 
 function App() {
   const [pokeData, setPokedata] = useState({});
   const [apiData, setApiData] = useState([]);
   function gettingData(row){
-    //console.log(row);
     setPokedata(row);
   }
-  // console.log("app.js---pokedata",pokeData);
 
   function getApiData(rows){
     setApiData(rows);

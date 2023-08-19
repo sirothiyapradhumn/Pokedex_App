@@ -3,6 +3,7 @@
     transition: 0.6s;
     width: 17vw;
     border-radius: 20px;
+    background-color: #c5c6c7;
     margin: 1rem;
     img {
       border-radius: 41px 41px 41px 41px;
@@ -11,7 +12,8 @@
   }
   
   .card:hover {
-    box-shadow: 0 16px 24px 0 rgba(28, 27, 27, 0.934);
+    // box-shadow: 0 16px 24px 0 rgba(28, 27, 27, 0.934);
+    box-shadow: 0 20px 55px 0 #2196F3;
   }
   
   .container {
@@ -24,11 +26,20 @@
       margin: 0%;
     }
     .pokeType{
-      color: #07db04fa;
       margin: 0%;
+      padding-bottom: 1em;
     }
     button{
-      margin: 0.5rem;
-      margin-left: 3.5rem;
+      border-radius: 28px;
+      font-family: Arial;
+      color: #ffffff;
+      font-size: 13px;
+      background: #0b0c10;
+      padding: 10px 20px 10px 20px;
+      text-decoration: "none";
+    }
+    button:hover {
+      background: #9fa1a3;
+      text-decoration: none;
     }
   }

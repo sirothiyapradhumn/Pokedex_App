@@ -26,18 +26,14 @@ const types = ['Grass','Poison','Fire','Flying','Water','Bug','Normal','Electric
 
 function Navbaar(props) {
     const [checkedStateTyp, setCheckedStateTyp] = useState(new Array(types.length).fill(false));
-    //console.log(checkedStateTyp);
     const [checkedStateWeak, setCheckedStateWeak] = useState(new Array(weakness.length).fill(false));
     const [pokeType, setpokeType] = useState([]);
-    //console.log(pokeType);
     const [pokeWeakness, setPokeWeakness] = useState([]);
-    //console.log(pokeWeakness);
     const [currText, setCurrText] = useState('');
-    //console.log(currText);
 
     const handleOnChange = (position) => {
         const updatedCheckedState = checkedStateTyp.map((item, index) =>
-          index === position ? !item : item
+            index === position ? !item : item
         );
 
         setCheckedStateTyp(updatedCheckedState);
@@ -69,15 +65,15 @@ function Navbaar(props) {
         setPokeWeakness(tempData);
     }
 
-  return (
+return (
     <>
     <div className={style.navbarSelf}>
         <div className={style.title}>
-            <h1>Pokedex</h1>
+            <h1 style={{color: "#66fcf1",margin: 0, fontWeight: "900",fontSize: "3rem"}}>Pokedex</h1>
         </div>
 
         <div className={style.pokeTypes}>
-            <h3>Types</h3>
+            <h3 style={{color: "#66fcf1"}}>Types</h3>
             <ul className={style.list}>
             {types.map((type, index) => {
                 return (
@@ -91,7 +87,7 @@ function Navbaar(props) {
                             onChange={()=>handleOnChange(index)} 
                             />
 
-                        <label>{type}</label>
+                        <label style={{color: "#66fcf1"}}>{type}</label>
                         </div>
                     </div>
                     </li>
@@ -101,7 +97,7 @@ function Navbaar(props) {
         </div>
 
         <div className={style.pokeWeekness}>
-            <h3>Weaknesses</h3>
+            <h3 style={{color: "#66fcf1"}}>Weaknesses</h3>
             <ul className={style.list}>
             {weakness.map((week, index) => {
                 return (
@@ -112,7 +108,7 @@ function Navbaar(props) {
                         checked = {checkedStateWeak[index]}
                         onChange={()=>handleOnChange1(index)} 
                         />
-                        <label>{week}</label>
+                        <label style={{color: "#66fcf1"}}>{week}</label>
                         </div>
                     </div>
                     </li>

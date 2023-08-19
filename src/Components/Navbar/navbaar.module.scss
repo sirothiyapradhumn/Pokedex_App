@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     height: 17vh;
-    background-color: #61dafb;
-    border-radius: 10px;
+    background-color: #0b0c10;
+    // border-radius: 5px;
+    padding: 20px;
     .title{
       margin: 0.9rem;
     }
@@ -37,9 +38,10 @@
   .searchBar{
     height: 3rem;
     width: 15rem;
+    text-align: center;
     input{
-      height: 6vh;
+      height: 5vh;
       width: 12vw;
-      border-radius: 20px;
+      border-radius: 10px;
     }
   }

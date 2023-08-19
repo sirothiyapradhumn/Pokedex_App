@@ -1,29 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import style from './detailsShow.module.scss'
-import Navbaar from '../../Components/Navbar/Navbaar'
 
 function DetailsShow({pokeData, apiData}) {
-    // console.log(pokeData);
-    // console.log(apiData);
     const [nextEvo, setNextEvo] = useState([]);
     const [prevEvo, setPrevEvo] = useState([]);
     const [row, setRow] = useState(pokeData);
 
-    // console.log(row);
 
     useEffect(()=>{
-      // console.log("useeffect runn");
       row.hasOwnProperty('next_evolution') ? setNextEvo(row.next_evolution) : setNextEvo([]);
       row.hasOwnProperty('prev_evolution') ? setPrevEvo(row.prev_evolution) : setPrevEvo([]);
     },[row])
 
-    // console.log(nextEvo);
-    // console.log(prevEvo);
     const handleClick = (num)=>{
-      var filteRow = apiData.filter((obj)=>obj.num == num);
-      // console.log(num, filteRow );
+      var filteRow = apiData.filter((obj)=>obj.num === num);
       setRow(filteRow[0]);
       filteRow[0].hasOwnProperty('next_evolution') ? setNextEvo(filteRow[0].next_evolution) : setNextEvo([]);
       filteRow[0].hasOwnProperty('prev_evolution') ? setPrevEvo(filteRow[0].prev_evolution) : setPrevEvo([]);
@@ -63,7 +55,9 @@ function DetailsShow({pokeData, apiData}) {
             </div>
         </div>
 
-        <button><Link to="/" style={{textDecoration:"none"}}>Back</Link></button>
+        <button className={style.btn}  style={{margin: "2rem"}}>
+          <Link to="/" style={{textDecoration:"none", margin: "1rem", color: "white"}}>Back</Link>
+        </button>
     </div>
     
   )

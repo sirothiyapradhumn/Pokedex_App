@@ -8,14 +8,29 @@ exports[`Navbar Components defalut snapshot 1`] = `
     <div
       className="title"
     >
-      <h1>
+      <h1
+        style={
+          Object {
+            "color": "#66fcf1",
+            "fontSize": "3rem",
+            "fontWeight": "900",
+            "margin": 0,
+          }
+        }
+      >
         Pokedex
       </h1>
     </div>
     <div
       className="pokeTypes"
     >
-      <h3>
+      <h3
+        style={
+          Object {
+            "color": "#66fcf1",
+          }
+        }
+      >
         Types
       </h3>
       <ul
@@ -33,7 +48,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Grass"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Grass
               </label>
             </div>
@@ -51,7 +72,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Poison"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Poison
               </label>
             </div>
@@ -69,7 +96,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Fire"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Fire
               </label>
             </div>
@@ -87,7 +120,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Flying"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Flying
               </label>
             </div>
@@ -105,7 +144,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Water"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Water
               </label>
             </div>
@@ -123,7 +168,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Bug"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Bug
               </label>
             </div>
@@ -141,7 +192,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Normal"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Normal
               </label>
             </div>
@@ -159,7 +216,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Electric"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Electric
               </label>
             </div>
@@ -177,7 +240,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ground"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ground
               </label>
             </div>
@@ -195,7 +264,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Psychic"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Psychic
               </label>
             </div>
@@ -213,7 +288,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Rock"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Rock
               </label>
             </div>
@@ -231,7 +312,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ice"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ice
               </label>
             </div>
@@ -249,7 +336,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ghost"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ghost
               </label>
             </div>
@@ -267,7 +360,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Dragon"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Dragon
               </label>
             </div>
@@ -285,7 +384,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Fighting"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Fighting
               </label>
             </div>
@@ -296,7 +401,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
     <div
       className="pokeWeekness"
     >
-      <h3>
+      <h3
+        style={
+          Object {
+            "color": "#66fcf1",
+          }
+        }
+      >
         Weaknesses
       </h3>
       <ul
@@ -314,7 +425,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Grass"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Grass
               </label>
             </div>
@@ -332,7 +449,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Poison"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Poison
               </label>
             </div>
@@ -350,7 +473,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Fire"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Fire
               </label>
             </div>
@@ -368,7 +497,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Flying"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Flying
               </label>
             </div>
@@ -386,7 +521,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Water"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Water
               </label>
             </div>
@@ -404,7 +545,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Bug"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Bug
               </label>
             </div>
@@ -422,7 +569,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Fairy"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Fairy
               </label>
             </div>
@@ -440,7 +593,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Electric"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Electric
               </label>
             </div>
@@ -458,7 +617,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ground"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ground
               </label>
             </div>
@@ -476,7 +641,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Psychic"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Psychic
               </label>
             </div>
@@ -494,7 +665,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Rock"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Rock
               </label>
             </div>
@@ -512,7 +689,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ice"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ice
               </label>
             </div>
@@ -530,7 +713,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Ghost"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Ghost
               </label>
             </div>
@@ -548,7 +737,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Dragon"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Dragon
               </label>
             </div>
@@ -566,7 +761,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Fighting"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Fighting
               </label>
             </div>
@@ -584,7 +785,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Steel"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Steel
               </label>
             </div>
@@ -602,7 +809,13 @@ exports[`Navbar Components defalut snapshot 1`] = `
                 type="checkbox"
                 value="Dark"
               />
-              <label>
+              <label
+                style={
+                  Object {
+                    "color": "#66fcf1",
+                  }
+                }
+              >
                 Dark
               </label>
             </div>
